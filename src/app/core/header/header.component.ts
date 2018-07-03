@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
-import { DataStorageService } from '../shared/data-storage.service';
-import { Recipe } from '../recipes/recipe.model';
-import { AuthService } from '../auth/auth.service';
+import { DataStorageService } from '../../shared/data-storage.service';
+import { Recipe } from '../../recipes/recipe.model';
+import { AuthService } from '../../auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -28,6 +28,10 @@ export class HeaderComponent {
 
   onLogout() {
     this.authService.logout();
+  }
+
+  isAuthenticated() {
+    return this.authService.isAuthenticated();
   }
 
 }

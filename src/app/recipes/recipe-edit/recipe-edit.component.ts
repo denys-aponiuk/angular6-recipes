@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { RecipeService } from '../recipe.service';
+import { Ingredient } from '../../shared/ingrediant.model';
 
 @Component({
   selector: 'app-recipe-edit',
@@ -14,6 +15,7 @@ export class RecipeEditComponent implements OnInit {
   id: number;
   previousUrl: any;
   recipeForm: FormGroup;
+  ingredients: Ingredient[];
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -76,6 +78,7 @@ export class RecipeEditComponent implements OnInit {
                 [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)])
             })
           );
+          this.ingredients = recipe['ingredients'];
         }
       }
     }

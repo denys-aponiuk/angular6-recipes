@@ -7,4 +7,5 @@ It includes:
 - Lazy Loading Feature
 - HttpClient
 - Routing & Navigation
-and many other features
+
+And many other features
